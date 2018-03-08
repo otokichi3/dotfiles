@@ -315,7 +315,13 @@ nnoremap <leader>php :set ft=php<CR>
 " NERDTree関連の設定
 "-------------------------
 " 起動時に自動で NERDTree 起動
-autocmd vimenter * NERDTree
+" 起動時に開いたファイルにカーソルを移動する( <C-r> -> h )
+function s:MoveToFileAtStart()
+  call feedkeys("\<C-w>")
+  call feedkeys("\h")
+endfunction
+
+autocmd VimEnter *  NERDTree | call s:MoveToFileAtStart()
 
 " NERDTree を右側に
 let g:NERDTreeWinPos="right"
@@ -328,6 +334,6 @@ imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
 cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
 
 "他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
