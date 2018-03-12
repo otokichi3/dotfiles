@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version gvimrc file.
 " 日本語版のデフォルトGUI設定ファイル(gvimrc) - Vim 7.4
 "
-" Last Change: 06-Mar-2018.
+" Last Change: 12-Mar-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -63,7 +63,7 @@ endif
 
 "---------------------------------------------------------------------------
 " カラー設定:
-colorscheme morning
+" colorscheme molokai
 
 "---------------------------------------------------------------------------
 " フォント設定:
@@ -95,7 +95,7 @@ set lines=25
 " コマンドラインの高さ(GUI使用時)
 set cmdheight=2
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
-colorscheme desert " (GUI使用時)
+colorscheme molokai " (GUI使用時)
 
 "---------------------------------------------------------------------------
 " 日本語入力に関する設定:
@@ -198,4 +198,7 @@ set visualbell t_vb=
 
 " Ctrl + j でノーマルモードに移行
 imap <C-j> <esc>
+
+set t_Co=256 " iTerm2など既に256色環境なら無くても良い
+
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro

@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 08-Mar-2018.
+" Last Change: 12-Mar-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -172,7 +172,7 @@ set showcmd
 " タイトルを表示
 set title
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
-"colorscheme evening " (Windows用gvim使用時はgvimrcを編集すること)
+"colorscheme molokai " (Windows用gvim使用時はgvimrcを編集すること)
 
 "---------------------------------------------------------------------------
 " ファイル操作に関する設定:
@@ -290,7 +290,6 @@ endif
 
 " .md を markdown と認識させる
 au BufRead,BufNewFile *.md set filetype=markdown
-set syntax=markdown
 
 " encoding
 set encoding=utf-8
