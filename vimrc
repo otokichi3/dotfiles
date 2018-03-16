@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 12-Mar-2018.
+" Last Change: 16-Mar-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -172,7 +172,7 @@ set showcmd
 " タイトルを表示
 set title
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
-"colorscheme molokai " (Windows用gvim使用時はgvimrcを編集すること)
+colorscheme molokai " (Windows用gvim使用時はgvimrcを編集すること)
 
 "---------------------------------------------------------------------------
 " ファイル操作に関する設定:
@@ -258,8 +258,8 @@ set browsedir="C:\Users\kota\Desktop"
 set clipboard+=unnamed
 
 " 「o」と「O」実行後にノーマルモードに遷移
-noremap o o<ESC>
-noremap O O<ESC>
+" noremap o o<ESC>
+" noremap O O<ESC>
 
 " Tabでインデント調整
 noremap <tab> i<tab><ESC>
@@ -296,8 +296,8 @@ set encoding=utf-8
 set fileencodings=utf-8,shift-jis
 
 " 折り返し桁数と縦線表示
-set textwidth=97
-let &colorcolumn=&textwidth
+" set textwidth=97
+" let &colorcolumn=&textwidth
 
 " <leader> を ' ' に変更する
 let mapleader = "\<Space>"
@@ -315,12 +315,12 @@ nnoremap <leader>php :set ft=php<CR>
 "-------------------------
 " 起動時に自動で NERDTree 起動
 " 起動時に開いたファイルにカーソルを移動する( <C-r> -> h )
-function s:MoveToFileAtStart()
-  call feedkeys("\<C-w>")
-  call feedkeys("\h")
-endfunction
-
-autocmd VimEnter *  NERDTree | call s:MoveToFileAtStart()
+" function s:MoveToFileAtStart()
+"   call feedkeys("\<C-w>")
+"   call feedkeys("\h")
+" endfunction
+" 
+" autocmd VimEnter *  NERDTree | call s:MoveToFileAtStart()
 
 " NERDTree を右側に
 let g:NERDTreeWinPos="right"
@@ -335,4 +335,14 @@ cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
 "他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" neocomplete を起動時にオンにする
+let g:neocomplete#enable_at_startup = 1
+
+let g:neosnippet#snippets_directory='~/.vim/dein/repos/github.com/Shougo/neosnippet-snippets/neosnippets'
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro

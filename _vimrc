@@ -13,9 +13,9 @@ call dein#add('cohama/lexima.vim') " 括弧補完
 call dein#add('tomasr/molokai') " colorscheme molokai
 " deoplete (闇の力を与えられた新補完フレームワーク！) は、NeoVim or VIM8 + Python3 のため、
 " 諦めた。Neocomplete にすべき。
-" call dein#add('Shougo/neocomplete')
-" call dein#add('Shougo/neosnippet')
-" call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neocomplete')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
 
 call dein#end()
 
