@@ -338,6 +338,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " neocomplete を起動時にオンにする
 let g:neocomplete#enable_at_startup = 1
 
+" snippet のディレクトリ設定（neosnippetedit のときに必須）
 let g:neosnippet#snippets_directory='~/.vim/dein/repos/github.com/Shougo/neosnippet-snippets/neosnippets'
 
 " Plugin key-mappings.
@@ -345,4 +346,7 @@ let g:neosnippet#snippets_directory='~/.vim/dein/repos/github.com/Shougo/neosnip
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" airline(status_bar) のテーマ
+let g:airline_theme = 'violet'
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro

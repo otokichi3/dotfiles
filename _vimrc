@@ -14,8 +14,11 @@ call dein#add('tomasr/molokai') " colorscheme molokai
 " deoplete (闇の力を与えられた新補完フレームワーク！) は、NeoVim or VIM8 + Python3 のため、
 " 諦めた。Neocomplete にすべき。
 call dein#add('Shougo/neocomplete')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neosnippet') " スニペット。設定を忘れず。
+call dein#add('Shougo/neosnippet-snippets') " さらにスニペット
+call dein#add('vim-airline/vim-airline') " ステータスバーをかっこよく
+call dein#add('vim-airline/vim-airline-themes') " かっこよさに磨きをかける
+call dein#add('airblade/vim-gitgutter') " 左端に差分表示
 
 call dein#end()
 
