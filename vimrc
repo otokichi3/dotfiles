@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 16-Mar-2018.
+" Last Change: 22-Mar-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -349,4 +349,15 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " airline(status_bar) のテーマ
 let g:airline_theme = 'violet'
+
+" Shift + h(left) or + r(right) でタブを左右に移動
+nnoremap <S-h> :tabprevious<CR>
+nnoremap <S-l> :tabnext<CR>
+
+" edamame 編集用に行幅を 70 に設定する関数
+function! Edamame()
+    set textwidth=70
+    let &colorcolumn=&textwidth
+endfunction
+
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
