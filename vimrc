@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 22-Mar-2018.
+" Last Change: 27-Mar-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -290,6 +290,8 @@ endif
 
 " .md を markdown と認識させる
 au BufRead,BufNewFile *.md set filetype=markdown
+" .memo を markdown と認識させる
+au BufRead,BufNewFile *.memo set filetype=markdown
 
 " encoding
 set encoding=utf-8
@@ -343,9 +345,9 @@ let g:neosnippet#snippets_directory='~/.vim/dein/repos/github.com/Shougo/neosnip
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " airline(status_bar) のテーマ
 let g:airline_theme = 'violet'
@@ -359,5 +361,12 @@ function! Edamame()
     set textwidth=70
     let &colorcolumn=&textwidth
 endfunction
+
+" 差分コメント表示プラグインの有効化（gitファイルにのみ有効）
+" let g:gitgutter_highlight_lines = 1
+
+" タブ番号:バッファ名
+" フォーマットはステータスラインと同じ
+set guitablabel=%N:%t
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
