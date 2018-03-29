@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 27-Mar-2018.
+" Last Change: 29-Mar-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -336,6 +336,8 @@ cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
 
 "他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" winnr("$") : winnr がウィンドウ番号、$が最後
+" b:NERDTree : ???
 
 " neocomplete を起動時にオンにする
 let g:neocomplete#enable_at_startup = 1
@@ -357,7 +359,7 @@ nnoremap <S-h> :tabprevious<CR>
 nnoremap <S-l> :tabnext<CR>
 
 " edamame 編集用に行幅を 70 に設定する関数
-function! Edamame()
+function! Edamame() " デフォルト引数、引数を与えて色々したい。
     set textwidth=70
     let &colorcolumn=&textwidth
 endfunction

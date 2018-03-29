@@ -19,6 +19,7 @@ call dein#add('Shougo/neosnippet-snippets') " さらにスニペット
 call dein#add('vim-airline/vim-airline') " ステータスバーをかっこよく
 call dein#add('vim-airline/vim-airline-themes') " かっこよさに磨きをかける
 call dein#add('airblade/vim-gitgutter') " 左端に差分表示
+call dein#add('taku-o/zoom.vim') " +/- でズームイン／アウト！
 
 call dein#end()
 
