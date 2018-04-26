@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 29-Mar-2018.
+" Last Change: 03-Apr-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -288,8 +288,9 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 
-" .md を markdown と認識させる
+" .md, .mkd を markdown と認識させる
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.mkd set filetype=markdown
 " .memo を markdown と認識させる
 au BufRead,BufNewFile *.memo set filetype=markdown
 
@@ -370,5 +371,11 @@ endfunction
 " タブ番号:バッファ名
 " フォーマットはステータスラインと同じ
 set guitablabel=%N:%t
+
+" vimgrep, grep, Ggrep 後に自動で cwindow(Quickfix window)を開く
+autocmd QuickFixCmdPost *grep* cwindow
+
+" sonictemplate 用 template フォルダの指定
+let g:sonictemplate_vim_template_dir = $HOME.'/Documents/dotfiles/sonictemplate'
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro

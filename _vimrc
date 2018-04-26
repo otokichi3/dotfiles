@@ -19,8 +19,9 @@ call dein#add('Shougo/neosnippet-snippets') " さらにスニペット
 call dein#add('vim-airline/vim-airline') " ステータスバーをかっこよく
 call dein#add('vim-airline/vim-airline-themes') " かっこよさに磨きをかける
 call dein#add('airblade/vim-gitgutter') " 左端に差分表示
-call dein#add('taku-o/zoom.vim') " +/- でズームイン／アウト！
-
+call dein#add('mattn/sonictemplate-vim') " テンプレート管理
+call dein#add('tmhedberg/matchit') " % 拡張によるペアマッチ機能
+call dein#add('vim-scripts/zoom.vim') " +/- でズームイン／アウト！
 call dein#end()
 
 filetype plugin indent on
