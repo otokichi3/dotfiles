@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version gvimrc file.
 " 日本語版のデフォルトGUI設定ファイル(gvimrc) - Vim 7.4
 "
-" Last Change: 12-Mar-2018.
+" Last Change: 31-May-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -201,4 +201,7 @@ imap <C-j> <esc>
 
 set t_Co=256 " iTerm2など既に256色環境なら無くても良い
 
+" encoding(vimrc にもあるが、一応)
+set encoding=utf-8
+set fileencodings=utf-8,shift-jis
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro

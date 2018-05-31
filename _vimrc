@@ -22,6 +22,7 @@ call dein#add('airblade/vim-gitgutter') " 左端に差分表示
 call dein#add('mattn/sonictemplate-vim') " テンプレート管理
 call dein#add('tmhedberg/matchit') " % 拡張によるペアマッチ機能
 call dein#add('vim-scripts/zoom.vim') " +/- でズームイン／アウト！
+call dein#add('vim-scripts/taglist.vim') " 関数／変数を ctags でリスト化
 call dein#end()
 
 filetype plugin indent on

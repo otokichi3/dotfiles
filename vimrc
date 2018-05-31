@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 03-Apr-2018.
+" Last Change: 31-May-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -378,4 +378,30 @@ autocmd QuickFixCmdPost *grep* cwindow
 " sonictemplate 用 template フォルダの指定
 let g:sonictemplate_vim_template_dir = $HOME.'/Documents/dotfiles/sonictemplate'
 
+" tablist.vim 用設定
+" set tags=tags
+" let Tlist_Ctags_Cmd        = "C:\Windows\ctags.exe"
+" let Tlist_Show_One_File    = 1 " 現在表示中のファイルのみのタグしか表示しない
+" let Tlist_Use_Right_Window = 1 " 右側にtag listのウィンドウを表示する
+" let Tlist_Exit_OnlyWindow  = 1 " taglistのウィンドウだけならVimを閉じる
+" map <silent> <leader>l :TlistToggle<CR> " \lでtaglistウインドウを開いたり閉じたり出来るショートカット
+
+" カレントディレクトリを自動で切り替える
+" :echo exists("+autochdir") の結果が 0 の場合は利用不可
+set autochdir
+
+" 選択範囲を検索するキーマッピング
+vnoremap z/ <ESC>/\%V
+vnoremap z? <ESC>?\%V
+
+" Filetype が PHP で保存時にシンタックスエラーをチェックする
+" autocmd FileType php set makeprg=php\ -l\ %
+" autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
+
+" PHP Lint 
+nmap <leader>l :call PHPLint()<CR>
+function PHPLint()
+    let result = system( &ft . ' -l ' . bufname(""))
+    echo result
+endfunction
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
