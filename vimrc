@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 31-May-2018.
+" Last Change: 04-Jun-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -297,6 +297,7 @@ au BufRead,BufNewFile *.memo set filetype=markdown
 " encoding
 set encoding=utf-8
 set fileencodings=utf-8,shift-jis
+set fileformats=unix,dos,mac
 
 " 折り返し桁数と縦線表示
 " set textwidth=97
