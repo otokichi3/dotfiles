@@ -405,4 +405,8 @@ function PHPLint()
     let result = system( &ft . ' -l ' . bufname(""))
     echo result
 endfunction
+
+" アンダーライン
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
+
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
