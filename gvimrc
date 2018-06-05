@@ -205,7 +205,7 @@ set t_Co=256 " iTerm2など既に256色環境なら無くても良い
 set encoding=utf-8
 set fileencodings=utf-8,shift-jis
 
-" アンダーライン
-highlight CursorLine gui=underline guifg=NONE guibg=NONE
+" アンダーライン（カーソル移動が遅くなるため廃止）
+" highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
