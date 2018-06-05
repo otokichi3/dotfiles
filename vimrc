@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 04-Jun-2018.
+" Last Change: 05-Jun-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -405,8 +405,5 @@ function PHPLint()
     let result = system( &ft . ' -l ' . bufname(""))
     echo result
 endfunction
-
-" アンダーライン
-highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
