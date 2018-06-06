@@ -415,4 +415,20 @@ let g:indent_guides_start_level = 2 " 深さ 2 から開始
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2E2E2E ctermbg=233
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#424242 ctermbg=235
 
+" シンタックスチェック関連設定
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0 " ファイルオープン時はチェックしない
+let g:syntastic_check_on_wq = 1 " 閉じる際はチェックする
+
+" PHP ファイルの場合のみ自動チェック
+let g:syntastic_mode_map = {
+    \ 'mode': 'passive',
+    \ 'active_filetypes': ['php']
+    \}
+" チェッカー導入後に動作するらしい。
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
