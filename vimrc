@@ -408,8 +408,8 @@ vnoremap z? <ESC>?\%V
 "     echo result
 " endfunction
 
-" インデントハイライトをデフォルトでオン
-let g:indent_guides_enable_on_vim_startup = 1
+" インデントハイライトをデフォルトでオフ -> 描画処理が重すぎて実用的でない
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_start_level = 2 " 深さ 2 から開始
 " let g:indent_guides_auto_colors = 0 " オリジナル背景色にする -> 案外調整が難しいため保留
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2E2E2E ctermbg=233
