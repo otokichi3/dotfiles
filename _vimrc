@@ -23,6 +23,8 @@ call dein#add('mattn/sonictemplate-vim') " テンプレート管理
 call dein#add('tmhedberg/matchit') " % 拡張によるペアマッチ機能
 call dein#add('vim-scripts/zoom.vim') " +/- でズームイン／アウト！
 call dein#add('vim-scripts/taglist.vim') " 関数／変数を ctags でリスト化
+call dein#add('nathanaelkane/vim-indent-guides') " インデントを可視化
+
 call dein#end()
 
 filetype plugin indent on

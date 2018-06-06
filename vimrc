@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 05-Jun-2018.
+" Last Change: 06-Jun-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -336,10 +336,12 @@ omap <silent> <C-e>      :NERDTreeToggle<CR>
 imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
 cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
 
-"他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " winnr("$") : winnr がウィンドウ番号、$が最後
 " b:NERDTree : ???
+" 新しいタブを開いたときにカレントタブで NERDTree を開いていたら閉じる
+" autocmd bufenter * if (exists("b:NERDTree")) | NERDTreeClose | endif
 
 " neocomplete を起動時にオンにする
 let g:neocomplete#enable_at_startup = 1
@@ -398,12 +400,19 @@ vnoremap z? <ESC>?\%V
 " Filetype が PHP で保存時にシンタックスエラーをチェックする
 " autocmd FileType php set makeprg=php\ -l\ %
 " autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
-
+                
 " PHP Lint 
-nmap <leader>l :call PHPLint()<CR>
-function PHPLint()
-    let result = system( &ft . ' -l ' . bufname(""))
-    echo result
-endfunction
+" nmap <leader>l :call PHPLint()<CR>
+" function PHPLint()
+"     let result = system( &ft . ' -l ' . bufname(""))
+"     echo result
+" endfunction
+
+" インデントハイライトをデフォルトでオン
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2 " 深さ 2 から開始
+" let g:indent_guides_auto_colors = 0 " オリジナル背景色にする -> 案外調整が難しいため保留
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2E2E2E ctermbg=233
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#424242 ctermbg=235
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
