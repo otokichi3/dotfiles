@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 06-Jun-2018.
+" Last Change: 13-Jun-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -424,11 +424,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0 " ファイルオープン時はチェックしない
 let g:syntastic_check_on_wq = 1 " 閉じる際はチェックする
+let g:syntastic_enable_signs = 1
+let g:syntastic_echo_current_error = 1
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_php_php_args = '-l'
 
 " PHP ファイルの場合のみ自動チェック
 let g:syntastic_mode_map = {
     \ 'mode': 'passive',
     \ 'active_filetypes': ['php']
     \}
-" チェッカー導入後に動作するらしい。
+
+" vim-ref の設定
+" let g:ref_phpmanual_path = $HOME . '/.vim/ref/php-bigxhtml.html'
+
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
