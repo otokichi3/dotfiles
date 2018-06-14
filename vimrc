@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 13-Jun-2018.
+" Last Change: 14-Jun-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -370,6 +370,7 @@ endfunction
 
 " 差分コメント表示プラグインの有効化（gitファイルにのみ有効）
 " let g:gitgutter_highlight_lines = 1
+let g:gitgutter_max_signs = 2000 " マークの最大数
 
 " タブ番号:バッファ名
 " フォーマットはステータスラインと同じ
