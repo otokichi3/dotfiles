@@ -26,7 +26,7 @@ call dein#add('vim-scripts/taglist.vim') " 関数／変数を ctags でリスト
 call dein#add('nathanaelkane/vim-indent-guides') " インデントを可視化
 call dein#add('scrooloose/syntastic.git') " シンタックスチェック
 call dein#add('thinca/vim-ref') " マニュアルを Vim 上で見る！
-call dein#add('Shougo/vimproc.vim') " 非同期実行を可能にする（vim-ref用）
+" call dein#add('Shougo/vimproc.vim') " 非同期実行を可能にする（vim-ref用）
 " vim-ref はなかなかハードルが高い。w3m入れたり。
 
 call dein#end()
