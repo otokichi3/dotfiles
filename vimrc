@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 14-Jun-2018.
+" Last Change: 19-Jun-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -339,10 +339,14 @@ cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " winnr("$") : winnr がウィンドウ番号、$が最後
-" b:NERDTree : ???
-" 新しいタブを開いたときにカレントタブで NERDTree を開いていたら閉じる
-" autocmd bufenter * if (exists("b:NERDTree")) | NERDTreeClose | endif
+" b:NERDTree : カレントバッファの NERDTree
 
+" NERDTreeの新規タブオープン時、元タブのNERDTreeを閉じる
+" autocmd Tableave * if (b:NERDTree.isTabTree()) | b:NERDTree.NERDTreeClose | endif
+
+"-------------------------
+" NeoComplete関連の設定
+"-------------------------
 " neocomplete を起動時にオンにする
 let g:neocomplete#enable_at_startup = 1
 
@@ -355,6 +359,9 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
+"-------------------------
+" Misc関連の設定
+"-------------------------
 " airline(status_bar) のテーマ
 let g:airline_theme = 'violet'
 
@@ -438,5 +445,6 @@ let g:syntastic_mode_map = {
 
 " vim-ref の設定
 " let g:ref_phpmanual_path = $HOME . '/.vim/ref/php-bigxhtml.html'
+
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
