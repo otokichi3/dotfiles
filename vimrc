@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim 7.4
 "
-" Last Change: 19-Jun-2018.
+" Last Change: 22-Jun-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -303,7 +303,7 @@ set fileformats=unix,dos,mac
 " set textwidth=97
 " let &colorcolumn=&textwidth
 
-" <leader> を ' ' に変更する
+" <leader> を Space に変更する
 let mapleader = "\<Space>"
 
 " :w, :q を <leader>w, <leader>q に変更する
@@ -360,7 +360,7 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 "-------------------------
-" Misc関連の設定
+" Misc設定
 "-------------------------
 " airline(status_bar) のテーマ
 let g:airline_theme = 'violet'
@@ -418,33 +418,35 @@ vnoremap z? <ESC>?\%V
 
 " インデントハイライトをデフォルトでオフ -> 描画処理が重すぎて実用的でない
 let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_start_level = 2 " 深さ 2 から開始
+" let g:indent_guides_start_level = 2 " 深さ 2 から開始
 " let g:indent_guides_auto_colors = 0 " オリジナル背景色にする -> 案外調整が難しいため保留
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#2E2E2E ctermbg=233
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#424242 ctermbg=235
 
 " シンタックスチェック関連設定
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0 " ファイルオープン時はチェックしない
-let g:syntastic_check_on_wq = 1 " 閉じる際はチェックする
-let g:syntastic_enable_signs = 1
-let g:syntastic_echo_current_error = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_php_php_args = '-l'
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0 " ファイルオープン時はチェックしない
+"let g:syntastic_check_on_wq = 1 " 閉じる際はチェックする
+"let g:syntastic_enable_signs = 1
+"let g:syntastic_echo_current_error = 1
+"let g:syntastic_enable_highlighting = 1
+"let g:syntastic_php_php_args = '-l'
 
 " PHP ファイルの場合のみ自動チェック
-let g:syntastic_mode_map = {
-    \ 'mode': 'passive',
-    \ 'active_filetypes': ['php']
-    \}
+"let g:syntastic_mode_map = {
+"    \ 'mode': 'passive',
+"    \ 'active_filetypes': ['php']
+"    \}
 
 " vim-ref の設定
 " let g:ref_phpmanual_path = $HOME . '/.vim/ref/php-bigxhtml.html'
 
+" ころころさせない！
+let g:i_am_not_pika_beast = 1
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro

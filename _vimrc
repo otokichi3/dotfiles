@@ -29,6 +29,7 @@ call dein#add('thinca/vim-ref') " マニュアルを Vim 上で見る！
 " call dein#add('Shougo/vimproc.vim') " 非同期実行を可能にする（vim-ref用）
 " vim-ref はなかなかハードルが高い。w3m入れたり。
 call dein#add('bcicen/vim-vice') " あわーい色のカラースキーマ
+call dein#add('anekos/colocolo.vim') " カラースキーマをランダムに変更
 
 call dein#end()
 

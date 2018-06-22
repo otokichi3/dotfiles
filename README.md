@@ -1,2 +1,3 @@
 # settings
 Various setting files like .vimrc, .gvimrc, _vimrc, vimrc, colors, etc...
+$VIM/.../colors の Colocolo したくない *.vim は退避すること！

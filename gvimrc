@@ -4,7 +4,7 @@ scriptencoding utf-8
 " An example for a Japanese version gvimrc file.
 " 日本語版のデフォルトGUI設定ファイル(gvimrc) - Vim 7.4
 "
-" Last Change: 21-Jun-2018.
+" Last Change: 22-Jun-2018.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -61,6 +61,12 @@ if 1 && (!exists('g:no_gvimrc_example') || g:no_gvimrc_example == 0)
   source $VIMRUNTIME/gvimrc_example.vim
 endif
 
+"---------------------------------------------------------------------------
+" カラースキームをランダムに読み込む random.vim スクリプトを読み込む
+if 1 && filereadable($VIM . '/vim80/random.vim')
+  source $VIM/vim80/random.vim
+endif
+" C:\Users\wieth\Documents\vim80-kaoriya-win64-8.0.0596-20170502\vim80-kaoriya-win64\vim80\random.vim
 "---------------------------------------------------------------------------
 " カラー設定:
 " colorscheme molokai
