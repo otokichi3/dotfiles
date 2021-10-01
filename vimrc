@@ -250,9 +250,7 @@ if kaoriya#switch#enabled('disable-go-extra')
   let &rtp = join(filter(split(&rtp, ','), 'v:val !~ "[/\\\\]plugins[/\\\\]golang$"'), ',')
 endif
 
-" Yoshizaki added
-" デフォルトの保存先をデスクトップに指定
-set browsedir="C:\Users\kota\Desktop"
+" added
 
 " 無名レジスタに入るデータを、*レジスタにも入れる。
 set clipboard+=unnamed
